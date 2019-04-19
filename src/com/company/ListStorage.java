@@ -1,12 +1,13 @@
 package com.company;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ListStorage implements Storage {
 
     List<String> list = new ArrayList();
-int index = 0;
+
     @Override
     public String get(int index) {
         return list.get(index);
@@ -15,6 +16,23 @@ int index = 0;
     @Override
     public void add(String str) {
         list.add(str);
+    }
+
+    @Override
+    public void del(int index) {
+        list.remove(index);
+    }
+
+    @Override
+    public int size() {
+        return list.size();
+    }
+
+    public void getAll() {
+        for (String n : list)
+            System.out.print(n + " ");
+        System.out.println(" ");
 
     }
 }
+
