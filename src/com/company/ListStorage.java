@@ -1,12 +1,13 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 
 public class ListStorage implements Storage {
 
-    List<String> list = new ArrayList();
+  private   List<String> list = new MyList();
 
     @Override
     public String get(int index) {

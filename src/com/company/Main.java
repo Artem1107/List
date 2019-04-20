@@ -14,9 +14,9 @@ public class Main {
             i++;
         }
 
-        x.del(5);
+     //   x.del(5);
 
-        x.getAll();
+     // x.getAll();
 
         System.out.println("Amount of values "+x.size());
 
