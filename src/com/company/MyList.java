@@ -5,9 +5,9 @@ package com.company;
 import java.util.*;
 
 class MyList implements List {
-private String array[] = new String[15];
+private Object array[] = new String[15];
 private  int size = 0;
-String value;
+Object value;
 
 
     @Override
@@ -39,14 +39,14 @@ String value;
     public boolean add(Object o) {
         if(array.length <= size){
             int newValue = array.length*2;
-            String [] newArray = new String[newValue];
+            Object[] newArray = new Object[newValue];
             for(int i = 0; i < size; i++){
                 newArray[i] = array[i];
             }
             array = newArray;
         }
 
-        array[size] = (String) o;
+        array[size] = o;
         size++;
         return true;
     }
