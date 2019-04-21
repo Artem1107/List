@@ -5,7 +5,8 @@ package com.company;
 import java.util.*;
 
 class MyList implements List {
-private Object array[] = new String[15];
+
+private Object array[] = new Object[15];
 private  int size = 0;
 Object value;
 
@@ -17,12 +18,18 @@ Object value;
 
     @Override
     public boolean isEmpty() {
+        if (size!=0)
         return false;
+        else return true;
     }
 
     @Override
     public boolean contains(Object o) {
-        return false;
+        for (int i = 0; i < array.length; i++)
+           if (array[i] == o)
+                return true;
+            return false;
+
     }
 
     @Override
