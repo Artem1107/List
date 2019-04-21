@@ -1,14 +1,13 @@
 package com.company;
 
 
-
 import java.util.*;
 
 class MyList implements List {
 
-private Object array[] = new Object[15];
-private  int size = 0;
-Object value;
+    private Object array[] = new Object[15];
+    private int size = 0;
+    Object value;
 
 
     @Override
@@ -18,17 +17,17 @@ Object value;
 
     @Override
     public boolean isEmpty() {
-        if (size!=0)
-        return false;
+        if (size != 0)
+            return false;
         else return true;
     }
 
     @Override
     public boolean contains(Object o) {
         for (int i = 0; i < array.length; i++)
-           if (array[i] == o)
+            if (array[i] == o)
                 return true;
-            return false;
+        return false;
 
     }
 
@@ -44,15 +43,14 @@ Object value;
 
     @Override
     public boolean add(Object o) {
-        if(array.length <= size){
-            int newValue = array.length*2;
+        if (array.length <= size) {
+            int newValue = array.length * 2;
             Object[] newArray = new Object[newValue];
-            for(int i = 0; i < size; i++){
+            for (int i = 0; i < size; i++) {
                 newArray[i] = array[i];
             }
             array = newArray;
         }
-
         array[size] = o;
         size++;
         return true;
@@ -60,7 +58,15 @@ Object value;
 
     @Override
     public boolean remove(Object o) {
-        return false;
+
+        int i = 0;
+        while (array[i] != o) {
+            i++;}
+            for (int j = i + 1; j < size; j++)
+                array[j - 1] = array[j];
+
+        size--;
+        return true;
     }
 
     @Override
@@ -100,9 +106,9 @@ Object value;
 
     @Override
     public Object get(int index) {
-if (array.length>=index)
-    value = array[index];
-    return value;
+        if (array.length >= index)
+            value = array[index];
+        return value;
 
     }
 
